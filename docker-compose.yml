@@ -52,63 +52,63 @@ services:
         max-size: "100Mb"
         max-file: "3"
 
-  alts-celery:
-    image: alts-celery:latest
-    build:
-      dockerfile: Dockerfile.celery
-      context: ../alts
-    environment:
-      CELERY_CONFIG_PATH: "/celery_config.yaml"
-      EXTERNAL_NETWORK: "${COMPOSE_PROJECT_NAME:-albs-web-server}_default"
-    command:
-      celery -A alts.worker.app worker
-        --pool=threads --concurrency=20
-        --loglevel=INFO -Q docker-x86_64-0 -O fair --without-gossip
-        --without-mingle --without-heartbeat
-    restart: on-failure
-    privileged: true
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - "../alts/configs/alts_config.yaml:/celery_config.yaml"
-      - "../alts/alts:/code/alts"
-      - "../alts/resources:/code/resources"
-    depends_on:
-      - rabbitmq
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # alts-celery:
+  #   image: alts-celery:latest
+  #   build:
+  #     dockerfile: Dockerfile.celery
+  #     context: ../alts
+  #   environment:
+  #     CELERY_CONFIG_PATH: "/celery_config.yaml"
+  #     EXTERNAL_NETWORK: "${COMPOSE_PROJECT_NAME:-albs-web-server}_default"
+  #   command:
+  #     celery -A alts.worker.app worker
+  #       --pool=threads --concurrency=20
+  #       --loglevel=INFO -Q docker-x86_64-0 -O fair --without-gossip
+  #       --without-mingle --without-heartbeat
+  #   restart: on-failure
+  #   privileged: true
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock"
+  #     - "../alts/configs/alts_config.yaml:/celery_config.yaml"
+  #     - "../alts/alts:/code/alts"
+  #     - "../alts/resources:/code/resources"
+  #   depends_on:
+  #     - rabbitmq
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
-  alts-scheduler:
-    image: alts-scheduler:latest
-    build:
-      context: ../alts
-      dockerfile: Dockerfile.scheduler
-      target: alts-scheduler
-    ports:
-      - "8082:8000"
-    environment:
-      CELERY_CONFIG_PATH: "/scheduler_config.yaml"
-      SCHEDULER_CONFIG_PATH: "/scheduler_config.yaml"
-    command: |
-      bash -c "
-        set -ex
-        /wait-for-it.sh web_server:8000
-        uvicorn --host 0.0.0.0 alts.scheduler.app:app --limit-concurrency 100 --backlog 1000"
-    restart: on-failure
-    volumes:
-      - "../alts/configs/alts_config.yaml:/scheduler_config.yaml"
-      - "../alts/alts:/code/alts"
-      - "../alts/resources:/code/resources"
-    depends_on:
-      - web_server
-      - rabbitmq
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # alts-scheduler:
+  #   image: alts-scheduler:latest
+  #   build:
+  #     context: ../alts
+  #     dockerfile: Dockerfile.scheduler
+  #     target: alts-scheduler
+  #   ports:
+  #     - "8082:8000"
+  #   environment:
+  #     CELERY_CONFIG_PATH: "/scheduler_config.yaml"
+  #     SCHEDULER_CONFIG_PATH: "/scheduler_config.yaml"
+  #   command: |
+  #     bash -c "
+  #       set -ex
+  #       /wait-for-it.sh web_server:8000
+  #       uvicorn --host 0.0.0.0 alts.scheduler.app:app --limit-concurrency 100 --backlog 1000"
+  #   restart: on-failure
+  #   volumes:
+  #     - "../alts/configs/alts_config.yaml:/scheduler_config.yaml"
+  #     - "../alts/alts:/code/alts"
+  #     - "../alts/resources:/code/resources"
+  #   depends_on:
+  #     - web_server
+  #     - rabbitmq
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
   web_server:
     image: albs-web-server:latest
@@ -325,24 +325,24 @@ services:
         max-size: "100Mb"
         max-file: "3"
 
-  frontend:
-    image: albs-frontend:latest
-    env_file:
-      - vars.env
-    build:
-      dockerfile: Dockerfile
-      context: ../albs-frontend
-    command: npm run dev
-    volumes:
-      - "../albs-frontend:/home/albs/code"
-    restart: on-failure
-    depends_on:
-      - web_server
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # frontend:
+  #   image: albs-frontend:latest
+  #   env_file:
+  #     - vars.env
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ../albs-frontend
+  #   command: npm run dev
+  #   volumes:
+  #     - "../albs-frontend:/home/albs/code"
+  #   restart: on-failure
+  #   depends_on:
+  #     - web_server
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
   build_node:
     image: albs-node:latest
@@ -371,32 +371,32 @@ services:
         max-size: "100Mb"
         max-file: "3"
 
-  sign_node:
-    image: sign-node:latest
-    build:
-      context: ../albs-sign-node
-      dockerfile: Dockerfile
-      target: sign-node
-    env_file:
-      - vars.env
-    volumes:
-      - "~/.gnupg:/root/.gnupg"
-      - "../albs-sign-node/node-config/sign_node.yml:/root/.config/sign_node.yml"
-      - "../albs-sign-node/almalinux_sign_node.py:/sign-node/almalinux_sign_node.py"
-      - "../albs-sign-node/sign_node:/sign-node/sign_node"
-    restart: on-failure
-    command: |
-      bash -c "
-        set -ex
-        /wait-for-it.sh web_server:8000
-        python3 almalinux_sign_node.py -v"
-    depends_on:
-      - web_server
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # sign_node:
+  #   image: sign-node:latest
+  #   build:
+  #     context: ../albs-sign-node
+  #     dockerfile: Dockerfile
+  #     target: sign-node
+  #   env_file:
+  #     - vars.env
+  #   volumes:
+  #     - "~/.gnupg:/root/.gnupg"
+  #     - "../albs-sign-node/node-config/sign_node.yml:/root/.config/sign_node.yml"
+  #     - "../albs-sign-node/almalinux_sign_node.py:/sign-node/almalinux_sign_node.py"
+  #     - "../albs-sign-node/sign_node:/sign-node/sign_node"
+  #   restart: on-failure
+  #   command: |
+  #     bash -c "
+  #       set -ex
+  #       /wait-for-it.sh web_server:8000
+  #       python3 almalinux_sign_node.py -v"
+  #   depends_on:
+  #     - web_server
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
   gitea_listener:
     image: gitea-listener:latest
@@ -441,29 +441,29 @@ services:
         max-size: "100Mb"
         max-file: "3"
 
-  tests_cacher:
-    image: alma-tests-cacher:latest
-    build:
-      context: ../alma-tests-cacher
-      dockerfile: Dockerfile
-      target: cacher
-    restart: on-failure
-    volumes:
-      - "../alma-tests-cacher/alma_tests_cacher:/code/alma_tests_cacher"
-      - "../alma-tests-cacher/alma_tests_cacher.py:/code/alma_tests_cacher.py"
-      - "../alma-tests-cacher/vars.yaml:/code/vars.yaml"
-    command: |
-      bash -c "
-        set -ex
-        /wait-for-it.sh web_server:8000
-        python3 alma_tests_cacher.py"
-    depends_on:
-      - web_server
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # tests_cacher:
+  #   image: alma-tests-cacher:latest
+  #   build:
+  #     context: ../alma-tests-cacher
+  #     dockerfile: Dockerfile
+  #     target: cacher
+  #   restart: on-failure
+  #   volumes:
+  #     - "../alma-tests-cacher/alma_tests_cacher:/code/alma_tests_cacher"
+  #     - "../alma-tests-cacher/alma_tests_cacher.py:/code/alma_tests_cacher.py"
+  #     - "../alma-tests-cacher/vars.yaml:/code/vars.yaml"
+  #   command: |
+  #     bash -c "
+  #       set -ex
+  #       /wait-for-it.sh web_server:8000
+  #       python3 alma_tests_cacher.py"
+  #   depends_on:
+  #     - web_server
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
   pulp:
     image: pulp/pulp:3.49.1
@@ -515,20 +515,20 @@ services:
         max-size: "100Mb"
         max-file: "3"
 
-  nginx:
-    image: nginx
-    ports:
-      - 8080:80
-    volumes:
-      - "./nginx_configs:/etc/nginx/conf.d"
-    depends_on:
-      - web_server
-      - frontend
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # nginx:
+  #   image: nginx
+  #   ports:
+  #     - 8080:80
+  #   volumes:
+  #     - "./nginx_configs:/etc/nginx/conf.d"
+  #   depends_on:
+  #     - web_server
+  #     - frontend
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
   immudb:
     image: codenotary/immudb:1.5
@@ -545,31 +545,31 @@ services:
         max-size: "100Mb"
         max-file: "3"
 
-  sign_file:
-    image: sign-file:latest
-    build:
-      context: ../albs-sign-file
-      dockerfile: Dockerfile
-      target: sign-file
-    env_file: ../albs-sign-file/.env
-    command: |
-      bash -c "
-        set -ex
-        python3 db_manage.py dev_init
-        python3 start.py"
-    restart: on-failure
-    volumes:
-      - "${SF_HOST_GNUPG:-~/.gnupg}:/root/.gnupg"
-      - "../albs-sign-file/sign:/app/sign"
-      - "../albs-sign-file/start.py:/app/start.py"
-      - "../albs-sign-file/db_manage.py:/app/db_manage.py"
-    ports:
-      - "8083:8000"
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100Mb"
-        max-file: "3"
+  # sign_file:
+  #   image: sign-file:latest
+  #   build:
+  #     context: ../albs-sign-file
+  #     dockerfile: Dockerfile
+  #     target: sign-file
+  #   env_file: ../albs-sign-file/.env
+  #   command: |
+  #     bash -c "
+  #       set -ex
+  #       python3 db_manage.py dev_init
+  #       python3 start.py"
+  #   restart: on-failure
+  #   volumes:
+  #     - "${SF_HOST_GNUPG:-~/.gnupg}:/root/.gnupg"
+  #     - "../albs-sign-file/sign:/app/sign"
+  #     - "../albs-sign-file/start.py:/app/start.py"
+  #     - "../albs-sign-file/db_manage.py:/app/db_manage.py"
+  #   ports:
+  #     - "8083:8000"
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "100Mb"
+  #       max-file: "3"
 
 volumes:
   redis:
