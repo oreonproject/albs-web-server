@@ -1,9 +1,10 @@
 FROM almalinux/9-base:latest as web-server
 
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
 RUN <<EOT
   set -ex
-  export LANG=C.UTF-8
-  export LC_ALL=C.UTF-8
   dnf upgrade -y
   dnf install -y git modulemd-tools libmodulemd python3-libmodulemd python3-gobject gcc python3-devel
   dnf clean all
