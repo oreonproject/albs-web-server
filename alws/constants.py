@@ -41,8 +41,8 @@ DRAMATIQ_GEN_KEY_TASK_TIMEOUT = 10 * 60 * 1000  # 10 minutes in milliseconds
 DEFAULT_FILE_CHUNK_SIZE = 1024 * 1024  # 1 MB
 UPLOAD_FILE_CHUNK_SIZE = 50 * 1024 * 1024  # 50 MB
 SYSTEM_USER_NAME = "base_user"
-DEFAULT_PRODUCT = "AlmaLinux"
-DEFAULT_TEAM = "almalinux"
+DEFAULT_PRODUCT = "Oreon"
+DEFAULT_TEAM = "oreon"
 # Release constants
 LOWEST_PRIORITY = 10
 

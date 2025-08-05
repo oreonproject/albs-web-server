@@ -1,185 +1,264 @@
-- name: AlmaLinux-8-beta
+- name: Oreon-Lime-R2-beta
   modularity:
     git_tag_prefix:
-      modified: a8
-      non_modified: c8
+      modified: ol2
+      non_modified: cl2
   data:
     mock:
       secure_boot_macros:
         "%pe_signing_cert": "'05'"
-        "%pe_signing_token": "'AlmaLinux OS Foundation'"
-    versions:
-      - name: '8.10'
-        version_prefix: '81000'
-        dist_prefix: 'el8.10.0'
-  repositories:
-    - name: almalinux-8-beta
-      arch: i686
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-i686-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-8-beta
-      arch: x86_64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-x86_64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-8-beta
-      arch: aarch64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-aarch64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-8-beta
-      arch: ppc64le
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-ppc64le-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-8-beta
-      arch: s390x
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-s390x-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-8-beta-debuginfo
-      arch: i686
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-i686-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-8-beta-debuginfo
-      arch: x86_64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-x86_64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-8-beta-debuginfo
-      arch: aarch64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-aarch64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-8-beta-debuginfo
-      arch: ppc64le
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-ppc64le-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-8-beta-debuginfo
-      arch: s390x
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-s390x-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-8-beta
-      arch: src
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/almalinux8-beta-AlmaLinux-8-src-dr/
-      production: false
-      debug: false
-      priority: 10
-
-- name: AlmaLinux-9-beta
-  modularity:
-    git_tag_prefix:
-      modified: a9
-      non_modified: c9
-  data:
-    mock:
-      secure_boot_macros:
-        "%pe_signing_cert": '06'
-        "%pe_signing_token": 'AlmaLinux OS Foundation'
+        "%pe_signing_token": "'Oreon Project'"
     versions:
       - name: '9.6'
         version_prefix: '90600'
         dist_prefix: 'el9.6.0'
   repositories:
-    - name: almalinux-9-beta
+    - name: oreon-lime-r2-beta
       arch: i686
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-i686-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-i686-dr/
       production: false
       debug: false
       priority: 10
-    - name: almalinux-9-beta
+    - name: oreon-lime-r2-beta
       arch: x86_64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-x86_64-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-x86_64-dr/
       production: false
       debug: false
       priority: 10
-    - name: almalinux-9-beta
+    - name: oreon-lime-r2-beta
       arch: aarch64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-aarch64-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-aarch64-dr/
       production: false
       debug: false
       priority: 10
-    - name: almalinux-9-beta
+    - name: oreon-lime-r2-beta
       arch: ppc64le
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-ppc64le-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-ppc64le-dr/
       production: false
       debug: false
       priority: 10
-    - name: almalinux-9-beta
+    - name: oreon-lime-r2-beta
       arch: s390x
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-s390x-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-s390x-dr/
       production: false
       debug: false
       priority: 10
-    - name: almalinux-9-beta-debuginfo
+    - name: oreon-lime-r2-beta-debuginfo
       arch: i686
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-i686-debug-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-i686-debug-dr/
       production: false
       debug: true
       priority: 10
-    - name: almalinux-9-beta-debuginfo
+    - name: oreon-lime-r2-beta-debuginfo
       arch: x86_64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-x86_64-debug-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-x86_64-debug-dr/
       production: false
       debug: true
       priority: 10
-    - name: almalinux-9-beta-debuginfo
+    - name: oreon-lime-r2-beta-debuginfo
       arch: aarch64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-aarch64-debug-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-aarch64-debug-dr/
       production: false
       debug: true
       priority: 10
-    - name: almalinux-9-beta-debuginfo
+    - name: oreon-lime-r2-beta-debuginfo
       arch: ppc64le
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-ppc64le-debug-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-ppc64le-debug-dr/
       production: false
       debug: true
       priority: 10
-    - name: almalinux-9-beta-debuginfo
+    - name: oreon-lime-r2-beta-debuginfo
       arch: s390x
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-s390x-debug-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-s390x-debug-dr/
       production: false
       debug: true
       priority: 10
-    - name: almalinux-9-beta
+    - name: oreon-lime-r2-beta
       arch: src
       type: rpm
-      url: https://build.almalinux.org/pulp/content/builds/AlmaLinux-9-beta-AlmaLinux-9-src-dr/
+      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-src-dr/
+      production: false
+      debug: false
+      priority: 10
+
+- name: Oreon-10-beta
+  modularity:
+    git_tag_prefix:
+      modified: o10
+      non_modified: c10
+  data:
+    mock:
+      secure_boot_macros:
+        "%pe_signing_cert": '06'
+        "%pe_signing_token": 'Oreon Project'
+    versions:
+      - name: '10.0'
+        version_prefix: '10000'
+        dist_prefix: 'el10.0.0'
+  repositories:
+    - name: oreon-10-beta
+      arch: i686
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-i686-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-10-beta
+      arch: x86_64
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-x86_64-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-10-beta
+      arch: aarch64
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-aarch64-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-10-beta
+      arch: ppc64le
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-ppc64le-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-10-beta
+      arch: s390x
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-s390x-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-10-beta-debuginfo
+      arch: i686
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-i686-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-10-beta-debuginfo
+      arch: x86_64
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-x86_64-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-10-beta-debuginfo
+      arch: aarch64
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-aarch64-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-10-beta-debuginfo
+      arch: ppc64le
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-ppc64le-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-10-beta-debuginfo
+      arch: s390x
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-s390x-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-10-beta
+      arch: src
+      type: rpm
+      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-src-dr/
+      production: false
+      debug: false
+      priority: 10
+
+- name: Oreon-11-beta
+  modularity:
+    git_tag_prefix:
+      modified: o11
+      non_modified: c11
+  data:
+    mock:
+      secure_boot_macros:
+        "%pe_signing_cert": '08'
+        "%pe_signing_token": 'Oreon Project'
+    versions:
+      - name: '11.0'
+        version_prefix: '11000'
+        dist_prefix: 'el11.0.0'
+  repositories:
+    - name: oreon-11-beta
+      arch: x86_64
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-x86_64-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-11-beta
+      arch: aarch64
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-aarch64-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-11-beta
+      arch: ppc64le
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-ppc64le-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-11-beta
+      arch: s390x
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-s390x-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-11-beta-debuginfo
+      arch: x86_64
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-x86_64-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-11-beta-debuginfo
+      arch: aarch64
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-aarch64-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-11-beta-debuginfo
+      arch: ppc64le
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-ppc64le-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-11-beta-debuginfo
+      arch: s390x
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-s390x-debug-dr/
+      production: false
+      debug: true
+      priority: 10
+    - name: oreon-11-beta
+      arch: src
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-src-dr/
       production: false
       debug: false
       priority: 10
@@ -215,29 +294,7 @@
       debug: false
       priority: 10
 
-- name: EPEL-7
-  repositories:
-    - name: epel-7
-      arch: x86_64
-      type: rpm
-      url: https://el7.repo.almalinux.org/epel/7/x86_64/
-      production: false
-      debug: false
-      priority: 10
-    - name: epel-7
-      arch: aarch64
-      type: rpm
-      url: https://el7.repo.almalinux.org/epel/7/aarch64/
-      production: false
-      debug: false
-      priority: 10
-    - name: epel-7
-      arch: ppc64le
-      type: rpm
-      url: https://el7.repo.almalinux.org/epel/7/ppc64le/
-      production: false
-      debug: false
-      priority: 10
+
 
 - name: EPEL-10
   repositories:
@@ -279,42 +336,42 @@
     - name: dotnet-build
       arch: i686
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-dotnet-build-almalinux-$releasever-i686-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-i686-dr/
       production: false
       debug: false
       priority: 10
     - name: dotnet-build
       arch: x86_64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-dotnet-build-almalinux-$releasever-x86_64-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-x86_64-dr/
       production: false
       debug: false
       priority: 10
     - name: dotnet-build
       arch: x86_64_v2
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-dotnet-build-almalinux-$releasever-x86_64_v2-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-x86_64_v2-dr/
       production: false
       debug: false
       priority: 10
     - name: dotnet-build
       arch: aarch64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-dotnet-build-almalinux-$releasever-aarch64-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-aarch64-dr/
       production: false
       debug: false
       priority: 10
     - name: dotnet-build
       arch: ppc64le
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-dotnet-build-almalinux-$releasever-ppc64le-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-ppc64le-dr/
       production: false
       debug: false
       priority: 10
     - name: dotnet-build
       arch: s390x
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-dotnet-build-almalinux-$releasever-s390x-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-s390x-dr/
       production: false
       debug: false
       priority: 10
@@ -336,93 +393,38 @@
       debug: false
       priority: 10
 
-- name: openqa-almalinux-9
+- name: openqa-oreon-10
   repositories:
-    - name: openqa-almalinux-9
+    - name: openqa-oreon-10
       arch: x86_64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-openqa-almalinux-9-x86_64-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-x86_64-dr/
       production: false
       debug: false
       priority: 10
-    - name: openqa-almalinux-9
+    - name: openqa-oreon-10
       arch: aarch64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-openqa-almalinux-9-aarch64-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-aarch64-dr/
       production: false
       debug: false
       priority: 10
-    - name: openqa-almalinux-9
+    - name: openqa-oreon-10
       arch: s390x
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-openqa-almalinux-9-s390x-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-s390x-dr/
       production: false
       debug: false
       priority: 10
-    - name: openqa-almalinux-9
+    - name: openqa-oreon-10
       arch: ppc64le
       type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-openqa-almalinux-9-ppc64le-dr/
+      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-ppc64le-dr/
       production: false
       debug: false
       priority: 10
 
-- name: "copr:build.almalinux.org:soksanichenko:Pungi"
-  repositories:
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:x86_64"
-      arch: x86_64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-x86_64-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:x86_64-debug"
-      arch: x86_64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-x86_64-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:aarch64"
-      arch: aarch64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-aarch64-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:aarch64-debug"
-      arch: aarch64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-aarch64-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:ppc64le"
-      arch: ppc64le
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-ppc64le-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:ppc64le-debug"
-      arch: ppc64le
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-ppc64le-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:s390x"
-      arch: s390x
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-s390x-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:s390x-debug"
-      arch: s390x
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-s390x-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi:src"
-      arch: src
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi-almalinux-$releasever-src-dr/"
-      debug: false
-      production: false
+
 
 - name: "fedora-koji-epel10"
   repositories:
@@ -457,154 +459,45 @@
       debug: false
       production: false
 
-- name: "copr:build.almalinux.org:soksanichenko:Pungi10"
-  repositories:
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:x86_64"
-      arch: x86_64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-x86_64-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:x86_64-debug"
-      arch: x86_64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-x86_64-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:x86_64_v2"
-      arch: x86_64_v2
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-x86_64_v2-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:x86_64_v2-debug"
-      arch: x86_64_v2
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-x86_64_v2-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:aarch64"
-      arch: aarch64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-aarch64-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:aarch64-debug"
-      arch: aarch64
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-aarch64-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:ppc64le"
-      arch: ppc64le
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-ppc64le-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:ppc64le-debug"
-      arch: ppc64le
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-ppc64le-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:s390x"
-      arch: s390x
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-s390x-dr/"
-      debug: false
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:s390x-debug"
-      arch: s390x
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-s390x-debug-dr/"
-      debug: true
-      production: false
-    - name: "copr:build.almalinux.org:soksanichenko:Pungi10:src"
-      arch: src
-      type: rpm
-      url: "https://build.almalinux.org/pulp/content/copr/soksanichenko-Pungi10-almalinux-$releasever-src-dr/"
-      debug: false
-      production: false
 
-- name: java-portable
-  repositories:
-    - name: java-portable
-      arch: i686
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-java-portable-almalinux-8-i686-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: java-portable
-      arch: x86_64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-java-portable-almalinux-8-x86_64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: java-portable
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-java-portable-almalinux-8-x86_64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: java-portable
-      arch: aarch64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-java-portable-almalinux-8-aarch64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: java-portable
-      arch: ppc64le
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-java-portable-almalinux-8-ppc64le-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: java-portable
-      arch: s390x
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-java-portable-almalinux-8-s390x-dr/
-      production: false
-      debug: false
-      priority: 10
+
+
+
 
 - name: Synergy
   repositories:
-    - name: almalinux-synergy
+    - name: oreon-synergy
       arch: i686
       type: rpm
-      url: https://build.almalinux.org/pulp/content/prod/almalinux-$releasever-synergy-i686/
+      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-i686/
       production: true
       debug: false
       priority: 10
-    - name: almalinux-synergy
+    - name: oreon-synergy
       arch: x86_64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/prod/almalinux-$releasever-synergy-x86_64/
+      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-x86_64/
       production: true
       debug: false
       priority: 10
-    - name: almalinux-synergy
+    - name: oreon-synergy
       arch: aarch64
       type: rpm
-      url: https://build.almalinux.org/pulp/content/prod/almalinux-$releasever-synergy-aarch64/
+      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-aarch64/
       production: true
       debug: false
       priority: 10
-    - name: almalinux-synergy
+    - name: oreon-synergy
       arch: ppc64le
       type: rpm
-      url: https://build.almalinux.org/pulp/content/prod/almalinux-$releasever-synergy-ppc64le/
+      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-ppc64le/
       production: true
       debug: false
       priority: 10
-    - name: almalinux-synergy
+    - name: oreon-synergy
       arch: s390x
       type: rpm
-      url: https://build.almalinux.org/pulp/content/prod/almalinux-$releasever-synergy-s390x/
+      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-s390x/
       production: true
       debug: false
       priority: 10
@@ -800,145 +693,11 @@
       debug: false
       priority: 11
 
-- name: AlmaLinux-10-beta
-  data:
-     mock:
-       secure_boot_macros:
-         "%pe_signing_cert": "06"
-         "%pe_signing_token": "AlmaLinux OS Foundation"
-  repositories:
-    - name: almalinux-10-beta
-      arch: x86_64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-x86_64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-10-beta
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-x86_64_v2-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-10-beta
-      arch: aarch64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-aarch64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-10-beta
-      arch: ppc64le
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-ppc64le-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-10-beta
-      arch: s390x
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-s390x-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-10-beta-debuginfo
-      arch: x86_64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-x86_64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-10-beta-debuginfo
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-x86_64_v2-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-10-beta-debuginfo
-      arch: aarch64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-aarch64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-10-beta-debuginfo
-      arch: ppc64le
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-ppc64le-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-10-beta-debuginfo
-      arch: s390x
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-s390x-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-10-beta
-      arch: src
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-almalinux-10-src-dr/
-      production: false
-      debug: false
-      priority: 10
 
-- name: AlmaLinux-Kitten-10-beta-riscv64
-  repositories:
-    - name: almalinux-kitten-10-beta-riscv64
-      arch: riscv64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-riscv64-almalinux-kitten-10-riscv64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: almalinux-kitten-10-beta-riscv64-debuginfo
-      arch: riscv64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-riscv64-almalinux-kitten-10-riscv64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: almalinux-kitten-10-beta-riscv64
-      arch: src
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-almalinux10-beta-riscv64-almalinux-kitten-10-src-dr/
-      production: false
-      debug: false
-      priority: 10
 
-- name: Fedora-40-riscv64
-  data:
-    mock:
-      dnf_common_opts:
-        - --nobest
-        - --exclude=fedora*
-        - --exclude=perl*5.38*
-  repositories:
-    - name: fedora-40-riscv64
-      arch: riscv64
-      type: rpm
-      url: https://repo.almalinux.org/development/almalinux/10/fedora-40-riscv64/
-      production: false
-      debug: false
-      priority: 20
 
-- name: Fedora-41-riscv64
-  data:
-    mock:
-      dnf_common_opts:
-        - --nobest
-        - --exclude=fedora*
-  repositories:
-    - name: fedora-41-riscv64
-      arch: riscv64
-      type: rpm
-      url: http://fedora.riscv.rocks/kojifiles/repos/f41-build/latest/riscv64/
-      production: false
-      debug: false
-      priority: 20
+
+
 
 - name: nobest
   data:
@@ -946,69 +705,7 @@
       dnf_common_opts:
         - --nobest
 
-- name: libsolv_for_v2
-  repositories:
-    - name: libsolv_for_v2
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-libsolv_for_v2-almalinux-10-x86_64_v2-dr/
-      production: true
-      debug: false
-      priority: 9
 
-- name: EPEL-Kitten-10_altarch
-  repositories:
-    - name: EPEL_Kitten_altarch
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-epel-al-almalinux-kitten-10-x86_64_v2-dr/
-      production: true
-      debug: false
-      priority: 10
-    - name: EPEL_Kitten_altarch
-      arch: riscv64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-epel-al-almalinux-kitten-10-riscv64-dr/
-      production: true
-      debug: false
-      priority: 10
-
-- name: EPEL-10_altarch
-  repositories:
-    - name: EPEL_altarch
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-epel-al-almalinux-10-x86_64_v2-dr/
-      production: true
-      debug: false
-      priority: 10
-    - name: EPEL_altarch
-      arch: riscv64
-      type: rpm
-      url: https://build.almalinux.org/pulp/content/copr/eabdullin1-epel-al-almalinux-10-riscv64-dr/
-      production: true
-      debug: false
-      priority: 10
-
-- name: EPEL-ALK10-10-v2-bootstrap
-  repositories:
-    - name: epel-alk10-10-x86_64_v2-bootstrap
-      arch: x86_64_v2
-      type: rpm
-      url: https://dl.fedoraproject.org/pub/epel/10/Everything/x86_64/
-      production: false
-      debug: false
-      priority: 10
-
-- name: EPEL-AL10-10-v2-bootstrap
-  repositories:
-    - name: epel-al10-10-x86_64_v2-bootstrap
-      arch: x86_64_v2
-      type: rpm
-      url: https://dl.fedoraproject.org/pub/epel/10z/Everything/x86_64/
-      production: false
-      debug: false
-      priority: 10
 
 - name: disable_host_resolv
   data:
