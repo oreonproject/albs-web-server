@@ -20,8 +20,8 @@ from tests.test_utils.pulp_utils import get_rpm_pkg_info
         [],
         [
             {
-                "url": "https://git.almalinux.org/rpms/go-toolset.git",
-                "git_ref": "c8-stream-rhel8",
+                "url": "https://gitlab.com/oreonproject/rpms-core",
+                "git_ref": "ol2-stream-rhel9",
                 "exist": True,
                 "enabled": False,
                 "added_artifacts": [],
@@ -35,8 +35,8 @@ from tests.test_utils.pulp_utils import get_rpm_pkg_info
                 "ref_type": 1,
             },
             {
-                "url": "https://git.almalinux.org/rpms/golang.git",
-                "git_ref": "c8-stream-rhel8",
+                "url": "https://gitlab.com/oreonproject/rpms-core",
+                "git_ref": "ol2-stream-rhel9",
                 "exist": True,
                 "enabled": False,
                 "added_artifacts": [],
@@ -50,8 +50,8 @@ from tests.test_utils.pulp_utils import get_rpm_pkg_info
                 "ref_type": 1,
             },
             {
-                "url": "https://git.almalinux.org/rpms/delve.git",
-                "git_ref": "c8-stream-rhel8",
+                "url": "https://gitlab.com/oreonproject/rpms-core",
+                "git_ref": "ol2-stream-rhel9",
                 "exist": True,
                 "enabled": False,
                 "added_artifacts": [],
@@ -74,7 +74,7 @@ from tests.test_utils.pulp_utils import get_rpm_pkg_info
 def nonvalid_modular_build_payload(request) -> typing.Dict[str, typing.Any]:
     return {
         "platforms": [{
-            "name": "AlmaLinux-8",
+            "name": "Oreon-Lime-R2",
             "arch_list": ["i686", "x86_64"],
             "parallel_mode_enabled": True,
         }],
@@ -82,7 +82,7 @@ def nonvalid_modular_build_payload(request) -> typing.Dict[str, typing.Any]:
             "refs": request.param,
             "modules_yaml": (
                 '---\ndocument: modulemd\nversion: 2\ndata:\n  name:'
-                ' go-toolset\n  stream: "rhel8"\n  arch: x86_64\n '
+                ' go-toolset\n  stream: "rhel9"\n  arch: x86_64\n '
                 ' summary: Go\n  description: >-\n    Go Tools and'
                 ' libraries\n  license:\n    module:\n    - MIT\n '
                 ' dependencies:\n  - buildrequires:\n      go-toolset:'

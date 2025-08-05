@@ -20,16 +20,16 @@ from tests.constants import ADMIN_USER_ID
 )
 def product_create_payload(request) -> dict:
     return {
-        "name": "AlmaLinux",
+        "name": "Oreon",
         "owner_id": request.param,
-        "title": "AlmaLinux",
+        "title": "Oreon",
         "description": "",
         "platforms": [
             {
                 "id": 1,
-                "name": "AlmaLinux-8",
+                "name": "Oreon-Lime-R2",
                 "distr_type": "rhel",
-                "distr_version": "8",
+                "distr_version": "9",
                 "arch_list": [
                     "i686",
                     "x86_64",
@@ -49,9 +49,9 @@ def add_platfroms_to_product_payload() -> list:
     return [
         {
             "id": 1,
-            "name": "AlmaLinux-9",
+            "name": "Oreon-10",
             "distr_type": "rhel",
-            "distr_version": "9",
+            "distr_version": "10",
             "arch_list": [
                 "i686",
                 "x86_64",
@@ -78,9 +78,9 @@ def user_product_create_payload(request) -> dict:
         "platforms": [
             {
                 "id": 1,
-                "name": "AlmaLinux-8",
+                "name": "Oreon-Lime-R2",
                 "distr_type": "rhel",
-                "distr_version": "8",
+                "distr_version": "9",
                 "arch_list": [
                     "i686",
                     "x86_64",

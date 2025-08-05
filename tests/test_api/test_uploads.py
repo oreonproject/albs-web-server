@@ -33,7 +33,7 @@ class TestUploadsEndpoints(BaseAsyncTestCase):
             "post",
             "/api/v1/uploads/upload_repometada/",
             files={"modules": modules_yaml},
-            data={"repository": "almalinux-8-appstream-x86_64"},
+            data={"repository": "oreon-lime-r2-appstream-x86_64"},
         )
         message = f"Cannot upload module template:\n{response.text}"
         assert response.status_code == self.status_codes.HTTP_200_OK, message
@@ -51,7 +51,7 @@ class TestUploadsEndpoints(BaseAsyncTestCase):
             "post",
             "/api/v1/uploads/upload_repometada/",
             files={"modules": modules_yaml},
-            data={"repository": "AlmaLinux-8-i686-1-br"},
+            data={"repository": "Oreon-Lime-R2-i686-1-br"},
         )
         message = f"Cannot upload module template:\n{response.text}"
         assert response.status_code == self.status_codes.HTTP_200_OK, message
