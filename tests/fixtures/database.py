@@ -39,14 +39,14 @@ def get_user_data():
         {
             "id": ADMIN_USER_ID,
             "username": "admin",
-            "email": "boostyconnect@oreonproject.org",
+            "email": "admin@almalinux.com",
             "is_superuser": True,
             "is_verified": True,
         },
         {
             "id": CUSTOM_USER_ID,
             "username": "user1",
-            "email": "user1@oreonproject.org",
+            "email": "user1@almalinux.com",
             "is_superuser": False,
             "is_verified": True,
         },

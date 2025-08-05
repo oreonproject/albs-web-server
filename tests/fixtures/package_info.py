@@ -35,7 +35,7 @@ def mock_get_package_info_success(monkeypatch, package_info):
 @pytest.fixture
 def mock_get_package_info_platform_not_found(monkeypatch):
     async def mock_func(*args, **kwargs):
-        raise PlatformNotFoundError("Invalid distribution: Oreon-999")
+        raise PlatformNotFoundError("Invalid distribution: AlmaLinux-999")
 
     monkeypatch.setattr("alws.crud.package_info.get_package_info", mock_func)
 

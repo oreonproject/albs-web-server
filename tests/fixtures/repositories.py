@@ -10,9 +10,9 @@ from alws.models import Repository
 @pytest.fixture
 def repo_for_upload_payload() -> Dict[str, Any]:
     return {
-        'name': 'oreon-lime-r2-appstream-x86_64',
+        'name': 'almalinux-8-appstream-x86_64',
         'arch': 'x86_64',
-        'url': 'https://repo.oreonproject.org/',
+        'url': 'https://repo.almalinux.org/',
         'type': 'rpm',
         'debug': False,
     }
@@ -22,9 +22,9 @@ def repo_for_upload_payload() -> Dict[str, Any]:
 def create_test_repository_payload() -> Dict[str, Any]:
     return {
         'name': 'mock_test_repo',
-        'url': 'https://repo.oreonproject.org/',
-        'tests_dir': 'oreon/',
-        'tests_prefix': '9.',
+        'url': 'https://repo.almalinux.org/',
+        'tests_dir': 'almalinux/',
+        'tests_prefix': '8.',
         'team_id': 1,
     }
 

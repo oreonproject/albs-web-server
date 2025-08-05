@@ -12,7 +12,7 @@ class TestPackageInfoEndpoints(BaseAsyncTestCase):
     ):
         response = await self.make_request(
             "get",
-            "/api/v1/package_info/?name=example_package&oreon_version=10",
+            "/api/v1/package_info/?name=example_package&almalinux_version=9",
         )
 
         assert response.status_code == status.HTTP_200_OK
@@ -24,7 +24,7 @@ class TestPackageInfoEndpoints(BaseAsyncTestCase):
     ):
         response = await self.make_request(
             "get",
-            "/api/v1/package_info/?name=bash&oreon_version=999",
+            "/api/v1/package_info/?name=bash&almalinux_version=999",
         )
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -35,7 +35,7 @@ class TestPackageInfoEndpoints(BaseAsyncTestCase):
     ):
         response = await self.make_request(
             "get",
-            "/api/v1/package_info/?name=bash&oreon_version=10&arch=x86_64",
+            "/api/v1/package_info/?name=bash&almalinux_version=9&arch=x86_64",
         )
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
@@ -44,7 +44,7 @@ class TestPackageInfoEndpoints(BaseAsyncTestCase):
     async def test_empty_package_list(self, mock_get_package_info_empty):
         response = await self.make_request(
             "get",
-            "/api/v1/package_info/?name=none&oreon_version=10",
+            "/api/v1/package_info/?name=none&almalinux_version=9",
         )
 
         assert response.status_code == status.HTTP_200_OK
@@ -62,7 +62,7 @@ class TestPackageInfoEndpoints(BaseAsyncTestCase):
         self, mock_get_package_info_with_date_filter
     ):
         updated_after = "updated_after=2024-05-01 00:00:00"
-        q_params = f"?name=example_package&oreon_version=10&{updated_after}"
+        q_params = f"?name=example_package&almalinux_version=9&{updated_after}"
         response = await self.make_request(
             "get",
             f"/api/v1/package_info/{q_params}",

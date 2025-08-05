@@ -19,7 +19,7 @@ class Settings(BaseSettings):
 
     alts_host: str = 'http://alts-scheduler:8000'
     alts_token: str
-    gitea_host: str = 'https://gitlab.com/api/v4/'
+    gitea_host: str = 'https://git.almalinux.org/api/v1/'
 
     package_beholder_enabled: bool = True
     beholder_host: str = 'http://beholder-web:5000'
@@ -27,21 +27,21 @@ class Settings(BaseSettings):
 
     redis_url: str = 'redis://redis:6379'
 
-    database_url: str = 'postgresql+asyncpg://postgres:password@db/oreon-bs'
+    database_url: str = 'postgresql+asyncpg://postgres:password@db/almalinux-bs'
     test_database_url: str = (
-        'postgresql+asyncpg://postgres:password@db/test-oreon-bs'
+        'postgresql+asyncpg://postgres:password@db/test-almalinux-bs'
     )
     sync_database_url: str = (
-        'postgresql+psycopg2://postgres:password@db/oreon-bs'
+        'postgresql+psycopg2://postgres:password@db/almalinux-bs'
     )
 
     fastapi_sqla__async__sqlalchemy_url: str = (
-        'postgresql+asyncpg://postgres:password@db/oreon-bs'
+        'postgresql+asyncpg://postgres:password@db/almalinux-bs'
     )
     fastapi_sqla__async__sqlalchemy_echo_pool: bool = True
 
     sqlalchemy_url: str = (
-        'postgresql+psycopg2://postgres:password@db/oreon-bs'
+        'postgresql+psycopg2://postgres:password@db/almalinux-bs'
     )
     sqlalchemy_pool_pre_ping: bool = True
     sqlalchemy_pool_recycle: int = 3600
@@ -60,8 +60,8 @@ class Settings(BaseSettings):
     github_client: str
     github_client_secret: str
 
-    oreon_client: str = 'secret'
-    oreon_client_secret: str = 'secret'
+    almalinux_client: str = 'secret'
+    almalinux_client_secret: str = 'secret'
 
     jwt_secret: str
     jwt_algorithm: str = 'HS256'
@@ -93,7 +93,7 @@ class Settings(BaseSettings):
         'http://localhost:8080'
     )
     github_callback_endpoint: str = 'api/v1/auth/github/callback'
-    oreon_callback_endpoint: str = 'api/v1/auth/oreon/callback'
+    almalinux_callback_endpoint: str = 'api/v1/auth/almalinux/callback'
 
     sentry_environment: str = 'dev'
     sentry_dsn: Optional[str] = None
@@ -104,9 +104,16 @@ class Settings(BaseSettings):
     path_to_github_app_pem: Optional[str] = None
     github_installation_id: Optional[str] = None
     github_token: Optional[str] = None
-    github_organization_name: str = 'Oreon'
+    github_organization_name: str = 'oreonproject'
     github_project_number: Optional[int] = None
     github_default_repository_name: str = 'updates'
+    
+    # GitLab integration settings
+    gitlab_enabled: bool = False
+    gitlab_token: Optional[str] = None
+    gitlab_url: str = 'https://gitlab.com'
+    gitlab_project_id: Optional[str] = None
+    gitlab_default_repository_name: str = 'rpms-core'
 
     @field_validator('frontend_baseurl')
     @classmethod
@@ -127,10 +134,10 @@ class Settings(BaseSettings):
         )
 
     @property
-    def oreon_callback_url(self) -> str:
+    def almalinux_callback_url(self) -> str:
         return urllib.parse.urljoin(
             settings.frontend_baseurl,
-            settings.oreon_callback_endpoint,
+            settings.almalinux_callback_endpoint,
         )
 
 

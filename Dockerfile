@@ -1,8 +1,5 @@
 FROM almalinux/9-base:latest as web-server
 
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
-
 RUN <<EOT
   set -ex
   dnf upgrade -y

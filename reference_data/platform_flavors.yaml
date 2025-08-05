@@ -1,100 +1,96 @@
-- name: Oreon-Lime-R2-beta
+---
+- name: Oreon-Lime-R2
   modularity:
     git_tag_prefix:
-      modified: ol2
-      non_modified: cl2
+      modified: orlr2
+      non_modified: c9
   data:
     mock:
       secure_boot_macros:
-        "%pe_signing_cert": "'05'"
+        "%pe_signing_cert": "'06'"
         "%pe_signing_token": "'Oreon Project'"
     versions:
-      - name: '9.6'
+      - name: '9.3'
         version_prefix: '90600'
-        dist_prefix: 'el9.6.0'
+        dist_prefix: 'el9.3.0'
   repositories:
-    - name: oreon-lime-r2-beta
-      arch: i686
-      type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-i686-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: oreon-lime-r2-beta
+    - name: oreon-lr2
       arch: x86_64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-x86_64-dr/
-      production: false
+      url: http://repo.oreonproject.org/oreon/orlr2/
+      production: true
       debug: false
       priority: 10
-    - name: oreon-lime-r2-beta
+    - name: oreon-lr2
       arch: aarch64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-aarch64-dr/
-      production: false
+      url: http://repo.oreonproject.org/oreon/orlr2/
+      production: true
       debug: false
       priority: 10
-    - name: oreon-lime-r2-beta
+    - name: oreon-lr2
       arch: ppc64le
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-ppc64le-dr/
-      production: false
+      url: http://repo.oreonproject.org/oreon/orlr2/
+      production: true
       debug: false
       priority: 10
-    - name: oreon-lime-r2-beta
+    - name: oreon-lr2
       arch: s390x
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-s390x-dr/
-      production: false
+      url: http://repo.oreonproject.org/oreon/orlr2/
+      production: true
       debug: false
       priority: 10
-    - name: oreon-lime-r2-beta-debuginfo
-      arch: i686
-      type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-i686-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: oreon-lime-r2-beta-debuginfo
+
+- name: Oreon-Lime-R2-beta
+  modularity:
+    git_tag_prefix:
+      modified: orlr2
+      non_modified: c9
+  data:
+    mock:
+      secure_boot_macros:
+        "%pe_signing_cert": "'06'"
+        "%pe_signing_token": "'Oreon Project'"
+    versions:
+      - name: '9.3'
+        version_prefix: '90600'
+        dist_prefix: 'el9.3.0'
+  repositories:
+    - name: oreon-lr2-beta
       arch: x86_64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-x86_64-debug-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-lr2-beta-Oreon-Lime-R2-x86_64-dr/
       production: false
-      debug: true
+      debug: false
       priority: 10
-    - name: oreon-lime-r2-beta-debuginfo
+    - name: oreon-lr2-beta
       arch: aarch64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-aarch64-debug-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-lr2-beta-Oreon-Lime-R2-aarch64-dr/
       production: false
-      debug: true
+      debug: false
       priority: 10
-    - name: oreon-lime-r2-beta-debuginfo
+    - name: oreon-lr2-beta
       arch: ppc64le
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-ppc64le-debug-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-lr2-beta-Oreon-Lime-R2-ppc64le-dr/
       production: false
-      debug: true
+      debug: false
       priority: 10
-    - name: oreon-lime-r2-beta-debuginfo
+    - name: oreon-lr2-beta
       arch: s390x
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-s390x-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: oreon-lime-r2-beta
-      arch: src
-      type: rpm
-      url: https://build.oreon.org/pulp/content/builds/oreon-lime-r2-beta-Oreon-Lime-R2-src-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-lr2-beta-Oreon-Lime-R2-s390x-dr/
       production: false
       debug: false
       priority: 10
 
-- name: Oreon-10-beta
+- name: Oreon-10
   modularity:
     git_tag_prefix:
-      modified: o10
+      modified: or10
       non_modified: c10
   data:
     mock:
@@ -103,203 +99,268 @@
         "%pe_signing_token": 'Oreon Project'
     versions:
       - name: '10.0'
-        version_prefix: '10000'
+        version_prefix: '100000'
+        dist_prefix: 'el10.0.0'
+  repositories:
+    - name: oreon-10
+      arch: x86_64
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or10/
+      production: true
+      debug: false
+      priority: 10
+    - name: oreon-10
+      arch: x86_64_v2
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or10/
+      production: true
+      debug: false
+      priority: 10
+    - name: oreon-10
+      arch: aarch64
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or10/
+      production: true
+      debug: false
+      priority: 10
+    - name: oreon-10
+      arch: ppc64le
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or10/
+      production: true
+      debug: false
+      priority: 10
+    - name: oreon-10
+      arch: s390x
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or10/
+      production: true
+      debug: false
+      priority: 10
+    - name: oreon-10
+      arch: riscv64
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or10/
+      production: true
+      debug: false
+      priority: 10
+
+- name: Oreon-10-beta
+  modularity:
+    git_tag_prefix:
+      modified: or10
+      non_modified: c10
+  data:
+    mock:
+      secure_boot_macros:
+        "%pe_signing_cert": '06'
+        "%pe_signing_token": 'Oreon Project'
+    versions:
+      - name: '10.0'
+        version_prefix: '100000'
         dist_prefix: 'el10.0.0'
   repositories:
     - name: oreon-10-beta
-      arch: i686
+      arch: x86_64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-i686-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-10-beta-Oreon-10-x86_64-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-10-beta
-      arch: x86_64
+      arch: x86_64_v2
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-x86_64-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-10-beta-Oreon-10-x86_64_v2-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-10-beta
       arch: aarch64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-aarch64-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-10-beta-Oreon-10-aarch64-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-10-beta
       arch: ppc64le
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-ppc64le-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-10-beta-Oreon-10-ppc64le-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-10-beta
       arch: s390x
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-s390x-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-10-beta-Oreon-10-s390x-dr/
       production: false
       debug: false
       priority: 10
-    - name: oreon-10-beta-debuginfo
-      arch: i686
+    - name: oreon-10-beta
+      arch: riscv64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-i686-debug-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-10-beta-Oreon-10-riscv64-dr/
       production: false
-      debug: true
+      debug: false
       priority: 10
-    - name: oreon-10-beta-debuginfo
+
+- name: Oreon-11
+  modularity:
+    git_tag_prefix:
+      modified: or11
+      non_modified: f42
+  data:
+    mock:
+      secure_boot_macros:
+        "%pe_signing_cert": '06'
+        "%pe_signing_token": 'Oreon Project'
+    versions:
+      - name: '11.0'
+        version_prefix: '110000'
+        dist_prefix: 'f42.0.0'
+  repositories:
+    - name: oreon-11
       arch: x86_64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-x86_64-debug-dr/
-      production: false
-      debug: true
+      url: http://repo.oreonproject.org/oreon/or11/
+      production: true
+      debug: false
       priority: 10
-    - name: oreon-10-beta-debuginfo
+    - name: oreon-11
+      arch: x86_64_v2
+      type: rpm
+      url: http://repo.oreonproject.org/oreon/or11/
+      production: true
+      debug: false
+      priority: 10
+    - name: oreon-11
       arch: aarch64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-aarch64-debug-dr/
-      production: false
-      debug: true
+      url: http://repo.oreonproject.org/oreon/or11/
+      production: true
+      debug: false
       priority: 10
-    - name: oreon-10-beta-debuginfo
+    - name: oreon-11
       arch: ppc64le
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-ppc64le-debug-dr/
-      production: false
-      debug: true
+      url: http://repo.oreonproject.org/oreon/or11/
+      production: true
+      debug: false
       priority: 10
-    - name: oreon-10-beta-debuginfo
+    - name: oreon-11
       arch: s390x
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-s390x-debug-dr/
-      production: false
-      debug: true
+      url: http://repo.oreonproject.org/oreon/or11/
+      production: true
+      debug: false
       priority: 10
-    - name: oreon-10-beta
-      arch: src
+    - name: oreon-11
+      arch: riscv64
       type: rpm
-      url: https://build.oreon.org/pulp/content/builds/Oreon-10-beta-Oreon-10-src-dr/
-      production: false
+      url: http://repo.oreonproject.org/oreon/or11/
+      production: true
       debug: false
       priority: 10
 
 - name: Oreon-11-beta
   modularity:
     git_tag_prefix:
-      modified: o11
-      non_modified: c11
+      modified: or11
+      non_modified: f42
   data:
     mock:
       secure_boot_macros:
-        "%pe_signing_cert": '08'
+        "%pe_signing_cert": '06'
         "%pe_signing_token": 'Oreon Project'
     versions:
       - name: '11.0'
-        version_prefix: '11000'
-        dist_prefix: 'el11.0.0'
+        version_prefix: '110000'
+        dist_prefix: 'f42.0.0'
   repositories:
     - name: oreon-11-beta
       arch: x86_64
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-x86_64-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-11-beta-Oreon-11-x86_64-dr/
+      production: false
+      debug: false
+      priority: 10
+    - name: oreon-11-beta
+      arch: x86_64_v2
+      type: rpm
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-11-beta-Oreon-11-x86_64_v2-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-11-beta
       arch: aarch64
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-aarch64-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-11-beta-Oreon-11-aarch64-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-11-beta
       arch: ppc64le
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-ppc64le-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-11-beta-Oreon-11-ppc64le-dr/
       production: false
       debug: false
       priority: 10
     - name: oreon-11-beta
       arch: s390x
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-s390x-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-11-beta-Oreon-11-s390x-dr/
       production: false
       debug: false
       priority: 10
-    - name: oreon-11-beta-debuginfo
-      arch: x86_64
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-x86_64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: oreon-11-beta-debuginfo
-      arch: aarch64
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-aarch64-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: oreon-11-beta-debuginfo
-      arch: ppc64le
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-ppc64le-debug-dr/
-      production: false
-      debug: true
-      priority: 10
-    - name: oreon-11-beta-debuginfo
-      arch: s390x
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-s390x-debug-dr/
-      production: false
-      debug: true
-      priority: 10
     - name: oreon-11-beta
-      arch: src
+      arch: riscv64
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/builds/Oreon-11-beta-Oreon-11-src-dr/
+      url: https://build.oreonproject.org/pulp/content/builds/oreon-11-beta-Oreon-11-riscv64-dr/
       production: false
       debug: false
       priority: 10
 
-- name: EPEL
+- name: EPEL-9
   repositories:
-    - name: epel
+    - name: epel-9
       arch: x86_64
       type: rpm
-      url: https://dl.fedoraproject.org/pub/epel/$releasever/Everything/x86_64/
+      url: https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/
       production: false
       debug: false
       priority: 10
-    - name: epel
+    - name: epel-9
       arch: aarch64
       type: rpm
-      url: https://dl.fedoraproject.org/pub/epel/$releasever/Everything/aarch64/
+      url: https://dl.fedoraproject.org/pub/epel/9/Everything/aarch64/
       production: false
       debug: false
       priority: 10
-    - name: epel
+    - name: epel-9
       arch: ppc64le
       type: rpm
-      url: https://dl.fedoraproject.org/pub/epel/$releasever/Everything/ppc64le/
+      url: https://dl.fedoraproject.org/pub/epel/9/Everything/ppc64le/
       production: false
       debug: false
       priority: 10
-    - name: epel
+    - name: epel-9
       arch: s390x
       type: rpm
-      url: https://dl.fedoraproject.org/pub/epel/$releasever/Everything/s390x/
+      url: https://dl.fedoraproject.org/pub/epel/9/Everything/s390x/
       production: false
       debug: false
       priority: 10
-
-
 
 - name: EPEL-10
   repositories:
     - name: epel-10
       arch: x86_64
+      type: rpm
+      url: https://dl.fedoraproject.org/pub/epel/${releasever}/Everything/x86_64/
+      production: false
+      debug: false
+      priority: 10
+    - name: epel-10
+      arch: x86_64_v2
       type: rpm
       url: https://dl.fedoraproject.org/pub/epel/${releasever}/Everything/x86_64/
       production: false
@@ -326,105 +387,13 @@
       production: false
       debug: false
       priority: 10
-
-- name: dotnet-build
-  data:
-    mock:
-      macros:
-        "%centos": "0"
-  repositories:
-    - name: dotnet-build
-      arch: i686
+    - name: epel-10
+      arch: riscv64
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-i686-dr/
+      url: https://dl.fedoraproject.org/pub/epel/${releasever}/Everything/riscv64/
       production: false
       debug: false
       priority: 10
-    - name: dotnet-build
-      arch: x86_64
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-x86_64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: dotnet-build
-      arch: x86_64_v2
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-x86_64_v2-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: dotnet-build
-      arch: aarch64
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-aarch64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: dotnet-build
-      arch: ppc64le
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-ppc64le-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: dotnet-build
-      arch: s390x
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-dotnet-build-oreon-$releasever-s390x-dr/
-      production: false
-      debug: false
-      priority: 10
-
-- name: remi-9
-  repositories:
-    - name: remi
-      arch: x86_64
-      type: rpm
-      url: https://rpms.remirepo.net/enterprise/9/remi/x86_64/
-      production: false
-      debug: false
-      priority: 10
-    - name: remi
-      arch: aarch64
-      type: rpm
-      url: https://rpms.remirepo.net/enterprise/9/remi/aarch64/
-      production: false
-      debug: false
-      priority: 10
-
-- name: openqa-oreon-10
-  repositories:
-    - name: openqa-oreon-10
-      arch: x86_64
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-x86_64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: openqa-oreon-10
-      arch: aarch64
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-aarch64-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: openqa-oreon-10
-      arch: s390x
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-s390x-dr/
-      production: false
-      debug: false
-      priority: 10
-    - name: openqa-oreon-10
-      arch: ppc64le
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/copr/eabdullin1-openqa-oreon-10-ppc64le-dr/
-      production: false
-      debug: false
-      priority: 10
-
-
 
 - name: "fedora-koji-epel10"
   repositories:
@@ -459,253 +428,71 @@
       debug: false
       production: false
 
-
-
-
-
-
-- name: Synergy
+- name: "fedora-koji-epel9"
   repositories:
-    - name: oreon-synergy
-      arch: i686
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-i686/
-      production: true
-      debug: false
-      priority: 10
-    - name: oreon-synergy
+    - name: "fedora-koji-epel9:x86_64"
       arch: x86_64
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-x86_64/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/epel9.0-build/latest/$basearch/"
       debug: false
-      priority: 10
-    - name: oreon-synergy
+      production: false
+    - name: "fedora-koji-epel9:aarch64"
       arch: aarch64
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-aarch64/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/epel9.0-build/latest/$basearch/"
       debug: false
-      priority: 10
-    - name: oreon-synergy
-      arch: ppc64le
-      type: rpm
-      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-ppc64le/
-      production: true
-      debug: false
-      priority: 10
-    - name: oreon-synergy
+      production: false
+    - name: "fedora-koji-epel9:s390x"
       arch: s390x
       type: rpm
-      url: https://build.oreonproject.org/pulp/content/prod/oreon-$releasever-synergy-s390x/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/epel9.0-build/latest/$basearch/"
       debug: false
-      priority: 10
-    - name: epel
-      arch: x86_64
-      type: rpm
-      url: https://download.fedoraproject.org/pub/epel/$releasever/Everything/x86_64/
       production: false
-      debug: false
-      priority: 10
-    - name: epel
-      arch: aarch64
-      type: rpm
-      url: https://download.fedoraproject.org/pub/epel/$releasever/Everything/aarch64/
-      production: false
-      debug: false
-      priority: 10
-    - name: epel
+    - name: "fedora-koji-epel9:ppc64le"
       arch: ppc64le
       type: rpm
-      url: https://download.fedoraproject.org/pub/epel/$releasever/Everything/ppc64le/
-      production: false
+      url: "https://kojipkgs.fedoraproject.org/repos/epel9.0-build/latest/$basearch/"
       debug: false
-      priority: 10
-    - name: epel
-      arch: s390x
-      type: rpm
-      url: https://download.fedoraproject.org/pub/epel/$releasever/Everything/s390x/
       production: false
-      debug: false
-      priority: 10
 
-- name: CentOS-9-Stream
+- name: "fedora-koji-f42"
   repositories:
-    - name: c9s-build
+    - name: "fedora-koji-f42:x86_64"
       arch: x86_64
       type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c9s-build/latest/x86_64/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/f42-build/latest/$basearch/"
       debug: false
-      priority: 11
-    - name: c9s-build
-      arch: aarch64
-      type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c9s-build/latest/aarch64/
-      production: true
-      debug: false
-      priority: 11
-    - name: c9s-build
-      arch: ppc64le
-      type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c9s-build/latest/ppc64le/
-      production: true
-      debug: false
-      priority: 11
-    - name: c9s-build
-      arch: s390x
-      type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c9s-build/latest/s390x/
-      production: true
-      debug: false
-      priority: 11
-    - name: c9s-build
-      arch: i686
-      type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c9s-build/latest/i386/
-      production: true
-      debug: false
-      priority: 11
-
-- name: CentOS-10-Stream
-  repositories:
-    - name: c10s-build
-      arch: x86_64
-      type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c10s-build/latest/x86_64/
-      production: true
-      debug: false
-      priority: 10
-    - name: c10s-build
+      production: false
+    - name: "fedora-koji-f42:x86_64_v2"
       arch: x86_64_v2
       type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c10s-build/latest/x86_64/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/f42-build/latest/x86_64/"
       debug: false
-      priority: 10
-    - name: c10s-build
+      production: false
+    - name: "fedora-koji-f42:aarch64"
       arch: aarch64
       type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c10s-build/latest/aarch64/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/f42-build/latest/$basearch/"
       debug: false
-      priority: 10
-    - name: c10s-build
-      arch: ppc64le
-      type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c10s-build/latest/ppc64le/
-      production: true
-      debug: false
-      priority: 10
-    - name: c10s-build
+      production: false
+    - name: "fedora-koji-f42:s390x"
       arch: s390x
       type: rpm
-      url: https://kojihub.stream.centos.org/kojifiles/repos/c10s-build/latest/s390x/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/f42-build/latest/$basearch/"
       debug: false
-      priority: 10
-
-- name: UBI
-  repositories:
-    - name: baseos-ubi
-      arch: x86_64
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/x86_64/baseos/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: baseos-ubi
-      arch: aarch64
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/aarch64/baseos/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: baseos-ubi
+      production: false
+    - name: "fedora-koji-f42:ppc64le"
       arch: ppc64le
       type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/ppc64le/baseos/os/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/f42-build/latest/$basearch/"
       debug: false
-      priority: 11
-    - name: baseos-ubi
-      arch: s390x
+      production: false
+    - name: "fedora-koji-f42:riscv64"
+      arch: riscv64
       type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/s390x/baseos/os/
-      production: true
+      url: "https://kojipkgs.fedoraproject.org/repos/f42-build/latest/$basearch/"
       debug: false
-      priority: 11
-    - name: appstream-ubi
-      arch: x86_64
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/x86_64/appstream/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: appstream-ubi
-      arch: aarch64
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/aarch64/appstream/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: appstream-ubi
-      arch: ppc64le
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/ppc64le/appstream/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: appstream-ubi
-      arch: s390x
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/s390x/appstream/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: crb-ubi
-      arch: x86_64
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/x86_64/codeready-builder/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: crb-ubi
-      arch: aarch64
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/aarch64/codeready-builder/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: crb-ubi
-      arch: ppc64le
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/ppc64le/codeready-builder/os/
-      production: true
-      debug: false
-      priority: 11
-    - name: crb-ubi
-      arch: s390x
-      type: rpm
-      url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi$releasever/$releasever/s390x/codeready-builder/os/
-      production: true
-      debug: false
-      priority: 11
-
-
-
-
-
-
-
-- name: nobest
-  data:
-    mock:
-      dnf_common_opts:
-        - --nobest
-
-
+      production: false
 
 - name: disable_host_resolv
   data:
@@ -725,3 +512,4 @@
       chroot_setup_cmd: install tar gcc-c++ redhat-rpm-config almalinux-release which xz sed
         make bzip2 gzip gcc coreutils unzip shadow-utils diffutils cpio bash gawk rpm-build
         info patch util-linux findutils grep zlib scl-utils scl-utils-build git-core epel-rpm-macros
+
